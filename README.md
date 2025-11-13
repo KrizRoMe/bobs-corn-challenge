@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛏️ Bobs Corn Challenge
 
-## Getting Started
+Bobs Corn Challenge is a technical test designed to demonstrate my skills as a software engineer.
 
-First, run the development server:
+## 🛠️ Requirements
+
+- [Bun v1.2.19](https://bun.sh/blog/bun-v1.2.19)
+
+## 🚀 Getting Started
+
+1. Clone the repository.
+
+   ```bash
+   git clone https://github.com/KrizRoMe/bobs-corn-challenge
+   cd rentesy
+   ```
+
+2. Install dependencies.
+
+   ```bash
+   make install
+   ```
+
+> [!TIP]
+> If `make` is not recognized as a command, see the **Environment Setup** section below to install and configure it properly.
+
+3. Set up git hooks:
+
+   ```bash
+   make prepare
+   ```
+
+4. Set up environment variables:
+
+   - Copy the content of `.env.example` into `.env` and `.env.local`:
+
+   ```bash
+   cp .env.example .env
+   cp .env.example .env.local
+   ```
+
+   - Fill in the values of the environment variables.
+
+> [!IMPORTANT]
+> Make sure your `.env` and `.env.local` files contain valid credentials and database URLs before running migrations.
+
+5. Set up database:
+
+   - Create a database using compose.yml:
+
+   ```bash
+   make up-dev
+   ```
+
+   - Run the migrations:
+
+   ```bash
+   make migrate-dev
+   ```
+
+   - Seed the database:
+
+   ```bash
+   make seed
+   ```
+
+> [!TIP]
+> If you encounter connection errors, verify that Docker is running and your `.env` database credentials match those defined in `compose.dev.yaml`.
+
+6. Start the development server and navigate to <http://127.0.0.1:3000/> to access the application.
+
+   ```bash
+   make dev
+   ```
+
+---
+
+## ⚙️ Environment Setup
+
+1. **Install Volta**
+
+Download the [Volta installer](https://docs.volta.sh/guide/getting-started#install-volta) and run it.
+
+> [!TIP]
+> After installing Volta, restart your terminal so that the `volta` command is recognized.
+
+2. **Install Bun (v1.2.19)**
+
+   ```bash
+   volta install bun@1.2.19
+   bun --version
+   ```
+
+3. **Install and configure Make**
+
+#### 🐧 Linux
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+sudo apt-get install make
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### 🏁 macOS
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+brew install make
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### 🪟 Windows
 
-## Learn More
+Install [Chocolatey](https://chocolatey.org/install) and run the following command:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+choco install make
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> [!TIP]
+> Ensure your terminal (PowerShell, Git Bash, or WSL) includes make in your PATH.
+> You can check it by running:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+make --version
+```
 
-## Deploy on Vercel
+## 🧪 Running Tests
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project includes a complete test suite to ensure code quality and functionality.
+You can run the tests using **Make commands**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Run all tests
+
+```bash
+make test
+```
+
+### 2. Run tests in watch mode
+
+```bash
+make test-watch
+```
+
+### 3. Run E2E tests
+
+```bash
+make test-e2e
+```
+
+---

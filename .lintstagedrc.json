@@ -1,0 +1,13 @@
+{
+  "*.ts?(x)": [
+    "jest --findRelatedTests --passWithNoTests",
+    "make lint",
+    "make format"
+  ],
+  "*.js?(x)": [
+    "jest --findRelatedTests --passWithNoTests",
+    "make lint",
+    "make format"
+  ],
+  "*.json": ["make format"]
+}
