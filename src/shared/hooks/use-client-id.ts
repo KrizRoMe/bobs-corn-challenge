@@ -8,7 +8,7 @@ export function useClientId() {
   useEffect(() => {
     let id = getCookie("clientId");
     if (!id) {
-      id = crypto.randomUUID();
+      id = Math.random().toString(36).substring(2, 10);
       document.cookie = `clientId=${id}; path=/; max-age=${60 * 60 * 24 * 365}`;
     }
     setClientId(id);

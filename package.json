@@ -12,7 +12,8 @@
     "precommit": "lint-staged",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "migrate:prod": "bun x prisma migrate deploy"
   },
   "dependencies": {
     "@prisma/client": "6.19.0",

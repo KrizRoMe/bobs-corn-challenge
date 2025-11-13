@@ -10,7 +10,7 @@ COMPOSE_DEV = docker/compose.dev.yml
 COMPOSE_PROD = docker/compose.prod.yml
 
 ENV_DEV = .env
-ENV_PROD = .env.prod
+ENV_PROD = .env.production
 
 DOCKER_COMPOSE_DEV = docker compose --env-file $(ENV_DEV) -f $(COMPOSE_DEV)
 DOCKER_COMPOSE_PROD = docker compose --env-file $(ENV_PROD) -f $(COMPOSE_PROD)
