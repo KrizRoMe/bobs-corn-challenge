@@ -2,12 +2,6 @@
 
 Bobs Corn Challenge is a technical test designed to demonstrate my skills as a software engineer.
 
-## 🌍 Live Demo
-
-🚀 **Deployed at:** [http://ec2-35-173-125-150.compute-1.amazonaws.com](http://ec2-35-173-125-150.compute-1.amazonaws.com)
-
-> The application is deployed on AWS EC2 using Docker and Nginx as a reverse proxy.
-
 ## 🛠️ Requirements
 
 - [Bun v1.2.19](https://bun.sh/blog/bun-v1.2.19)
